@@ -30,11 +30,3 @@ const MessageBox = ({ username , pressedContact , pUsername , getConversations, 
 }
  
 export default MessageBox;
-
-
-// <div className="message received">Hesssssssssssssssssssssssssssssssssssssso</div>
-// <div className="message receive-time">12:22</div>
-// <div className="message received">Hello</div>
-// <div className="message receive-time">12:22</div>
-// <div className="message sent">009</div>
-// <div className="message sent-time">12:22</div>
