@@ -115,12 +115,7 @@ const [conversations, setConversations] = useState([
     return date+' '+time;
   }
 
-  const getNextKey = (messageDetails) => {
-    console.log(messageDetails["id"]);
-    return messageDetails["id"] + 1;
-  }
-
-  const sendMessage = (fromUsername, toUsername, msg, timeStamp) => {
+  const sendMessage = (fromUsername, toUsername, msg) => {
     if (!doesConvoExist(fromUsername, toUsername)) {
       addFriend(fromUsername, toUsername);
       addFriend(toUsername, fromUsername);
