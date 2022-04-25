@@ -1,6 +1,6 @@
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 
-const MessageBox = ({ username , pressedContact , pUsername , getConversations, getConversation, sendMessage, sendHandler}) => {
+const MessageBox = ({ username , pressedContact , pUsername , getConversation, sendMessage, sendHandler}) => {
     const [msg, setMsg] = useState('');
     const s = "sent";
     const r = "received";
@@ -9,15 +9,10 @@ const MessageBox = ({ username , pressedContact , pUsername , getConversations, 
     const con = getConversation(username,pUsername);
 
     const send = (u1, u2, m) => {
+        if (!m.trim().length) {return}
         sendMessage(u1, u2, m);
         sendHandler();
     }
-
-    // const divRef = useRef(null);
-
-    // useEffect(() => {
-    //     divRef.current.scrollIntoView({ behavior : "smooth" })
-    // })
     
     return ( 
         <div className="message-box">
