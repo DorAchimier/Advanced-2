@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 import ContactsList from "./ContactsList";
 import MessageBox from "./MessageBox";
 
-const MyChat = ( { getDB , getConversations, getConversation, getLastMessage, getNickname, getUsernames, getNick, addFriend, sendMessage } ) => {
+const MyChat = ( { getDB , getConversation, getLastMessage, getNickname, getUsernames, getNick, addFriend, sendMessage } ) => {
     const { username } = useParams();
     const db = getDB(); 
 
@@ -14,7 +14,7 @@ const MyChat = ( { getDB , getConversations, getConversation, getLastMessage, ge
     const userDetails = db.find((u) => u.username === username);
 
     useEffect(() => {
-        {pressedContact && <MessageBox username={username} pressedContact={pressedContact} pUsername={pUsername} getConversations={getConversations} endMessage={sendMessage} sendHandler={addSend}/>}
+        {pressedContact && <MessageBox username={username} pressedContact={pressedContact} pUsername={pUsername} getConversation={getConversation} sendMessage={sendMessage} sendHandler={addSend}/>}
     }, [pressedContact, numOfSends]);
 
     const addSend = () => {
@@ -31,7 +31,7 @@ const MyChat = ( { getDB , getConversations, getConversation, getLastMessage, ge
             <Navbar pageName="Sign Out" pageRef="/" />
             <div className="chat-screen">
                 <ContactsList user={userDetails} clickHandle={clickHandle} getLastMessage={getLastMessage} getUsernames={getUsernames} getNickname={getNick} addFriend={addFriend} username={username}/>
-                {pressedContact && <MessageBox username={username} pressedContact={pressedContact} pUsername={pUsername} getConversations={getConversations} getConversation={getConversation} sendMessage={sendMessage} sendHandler={addSend}/>}
+                {pressedContact && <MessageBox username={username} pressedContact={pressedContact} pUsername={pUsername}  getConversation={getConversation} sendMessage={sendMessage} sendHandler={addSend}/>}
             </div>
         </div>
      );
