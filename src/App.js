@@ -26,7 +26,7 @@ const [conversations, setConversations] = useState([
     {id:"2",message:"Nooooo", sender:"titinsky", receiver:"shavit12", time: "12:23"},
     {id:"3",message:"https://youtu.be/om4UZCVqdsE", sender:"shavit12", receiver:"titinsky", time: "12:23"}]},
 
-    {key:"titinsky|phoebe", messages:[{id:"4",message:"Hello", sender:"titinsky", receiver:"phoebe", time: "13:22"}]},
+    {key:"titinsky|phoebe", messages:[{id:"1",message:"Hello", sender:"titinsky", receiver:"phoebe", time: "13:22"}]},
 
     {key:"mj|d12", messages:[{id:"1",message:"Hello", sender:"mj", receiver:"d12", time: "13:02"},
     {id:"2",message:"Aloha", sender:"d12", receiver:"mj", time: "13:09"},
