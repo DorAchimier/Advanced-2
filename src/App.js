@@ -4,7 +4,6 @@ import Register from './components/Register';
 import MyChat from './components/MyChat';
 import NotFound from './components/NotFound';
 import { useState } from "react";
-import AddFriend from './components/AddFriend';
 
 function App() {
 
@@ -22,26 +21,26 @@ function App() {
 ]);
 
 const [conversations, setConversations] = useState([
-    {key:"titinsky|shavit12", messages:[{id:"1", message:"closed", sender:"shavit12", receiver:"titinsky", time: "12:22"},
-    {id:"2",message:"Nooooo", sender:"titinsky", receiver:"shavit12", time: "12:23"},
-    {id:"3",message:"https://youtu.be/om4UZCVqdsE", sender:"shavit12", receiver:"titinsky", time: "12:23"}]},
+    {key:"titinsky|shavit12", messages:[{id:"1", message:"closed", sender:"shavit12", receiver:"titinsky", time: "2022-4-25 12:02:50"},
+    {id:"2",message:"Nooooo", sender:"titinsky", receiver:"shavit12", time: "2022-4-25 17:20:53"},
+    {id:"3",message:"https://youtu.be/om4UZCVqdsE", sender:"shavit12", receiver:"titinsky", time: "2022-4-25 17:22:50"}]},
 
-    {key:"titinsky|phoebe", messages:[{id:"1",message:"Hello", sender:"titinsky", receiver:"phoebe", time: "13:22"}]},
+    {key:"titinsky|phoebe", messages:[{id:"1",message:"Hello", sender:"titinsky", receiver:"phoebe", time: "2022-4-23 17:22:50"}]},
 
-    {key:"mj|d12", messages:[{id:"1",message:"Hello", sender:"mj", receiver:"d12", time: "13:02"},
-    {id:"2",message:"Aloha", sender:"d12", receiver:"mj", time: "13:09"},
-    {id:"3",message:"Ola", sender:"d12", receiver:"mj", time: "13:29"},
-    {id:"4",message:"Prazer em conhecer voce", sender:"d12", receiver:"mj", time: "13:29"},
-    {id:"5",message:"???", sender:"mj", receiver:"d12", time: "13:33"},
-    {id:"6",message:"(:", sender:"d12", receiver:"mj", time: "13:33"},
-    {id:"7",message:"???", sender:"mj", receiver:"d12", time: "13:33"},]},
+    {key:"mj|d12", messages:[{id:"1",message:"Hello", sender:"mj", receiver:"d12", time: "2022-4-23 17:22:50"},
+    {id:"2",message:"Aloha", sender:"d12", receiver:"mj", time: "2022-4-25 11:22:50"},
+    {id:"3",message:"Ola", sender:"d12", receiver:"mj", time: "2022-4-25 17:22:50"},
+    {id:"4",message:"Prazer em conhecer voce", sender:"d12", receiver:"mj", time: "2022-4-25 17:22:58"},
+    {id:"5",message:"???", sender:"mj", receiver:"d12", time: "2022-4-25 17:23:00"},
+    {id:"6",message:"(:", sender:"d12", receiver:"mj", time: "2022-4-25 17:23:09"},
+    {id:"7",message:"???", sender:"mj", receiver:"d12", time: "2022-4-25 17:24:50"},]},
 
-    {key:"joker|mj", messages:[{id:"1",message:"Why So Serious?", sender:"joker", receiver:"mj", time: "11:32"},
-    {id:"2",message:"You either die a hero, or live long enough to see yourself become the villain.", sender:"mj", receiver:"joker", time: "12:23"},
-    {id:"3",message:"..,he's the hero Gotham deserves, but not the one it needs right now. So, we'll hunt him, because he can take it. Because he's not our hero.", sender:"mj", receiver:"joker", time: "12:24"},
-    {id:"4",message:"He's a silent guardian. A watchful protector. A Dark Knight.", sender:"mj", receiver:"joker", time: "12:23"},
-    {id:"5",message:"https://youtu.be/YTHtEpKBZh4", sender:"joker", receiver:"mj", time: "12:29"},
-    {id:"6",message:"https://youtu.be/LAr6oAKieHk", sender:"mj", receiver:"joker", time: "19:53"}]}
+    {key:"joker|mj", messages:[{id:"1",message:"Why So Serious?", sender:"joker", receiver:"mj", time: "2022-4-25 17:22:51"},
+    {id:"2",message:"You either die a hero, or live long enough to see yourself become the villain.", sender:"mj", receiver:"joker", time: "2022-4-25 17:22:52"},
+    {id:"3",message:"..,he's the hero Gotham deserves, but not the one it needs right now. So, we'll hunt him, because he can take it. Because he's not our hero.", sender:"mj", receiver:"joker", time: "2022-4-25 17:23:50"},
+    {id:"4",message:"He's a silent guardian. A watchful protector. A Dark Knight.", sender:"mj", receiver:"joker", time: "2022-4-25 17:23:54"},
+    {id:"5",message:"https://youtu.be/YTHtEpKBZh4", sender:"joker", receiver:"mj", time: "2022-4-25 17:23:56"},
+    {id:"6",message:"https://youtu.be/LAr6oAKieHk", sender:"mj", receiver:"joker", time: "2022-4-25 17:24:55"}]}
 
 ]);
 
@@ -53,10 +52,6 @@ const [conversations, setConversations] = useState([
     var arr = [];
     db.map((e) => {arr.push(e.username)})
     return arr;
-  }
-
-  const getConversations = () => {
-    return conversations;
   }
 
   const getConversation = (username1, username2) => {
@@ -134,7 +129,7 @@ const [conversations, setConversations] = useState([
       <Routes>
         <Route path="/" element={<Home getDB={getDB} />}/>
         <Route path="/Register" element={<Register addUser={addUser} isUsernameTaken={isUsernameTaken}/>}/>
-        <Route path="/users/:username" element={<MyChat getDB={getDB} getConversations={getConversations} getConversation={getConversation} getLastMessage={getLastMessage} getNickname={getNickname} getUsernames={getUsernames} getNick={getNickname} addFriend={addFriend} sendMessage={sendMessage}/>}/>
+        <Route path="/users/:username" element={<MyChat getDB={getDB} getConversation={getConversation} getLastMessage={getLastMessage} getNickname={getNickname} getUsernames={getUsernames} getNick={getNickname} addFriend={addFriend} sendMessage={sendMessage}/>}/>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
