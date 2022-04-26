@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const Recorder = ({trigger, handleSend, handleChange, handleClose}) => {
+const Recorder = ({trigger, handleSend, handleClose}) => {
       const [audioURL, setAudioURL] = useState("");
       const [isRecording, setIsRecording] = useState(false);
       const [recorder, setRecorder] = useState(null);
@@ -44,8 +44,8 @@ const Recorder = ({trigger, handleSend, handleChange, handleClose}) => {
     }
 
     const send = (n) => {
-        handleChange(audioURL);
         handleSend(n);
+        setAudioURL("");
     }
 
     return ( 
@@ -56,7 +56,7 @@ const Recorder = ({trigger, handleSend, handleChange, handleClose}) => {
                 
                 <button onClick={() => startRecording()}>Start</button>
                 <button onClick={() => stopRecording()}>Stop</button>
-                <button onClick={() => send()}>Send</button>
+                <button onClick={() => send(audioURL)}>Send</button>
                 <button onClick={() => handleClose()}>X</button>
                 
                 <br></br>
