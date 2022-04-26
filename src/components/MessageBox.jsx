@@ -105,7 +105,7 @@ const MessageBox = ({ username , pressedContact , pUsername , getConversation, s
                         </div>
                         {msgDetails.type === "text" && <div className={`message ${mid}`}>{msgDetails.message}</div>}
 
-                        {msgDetails.type === "img" && <div className={`message ${mid}`}><img src={msgDetails.message} width="250" height="250"/></div>}
+                        {msgDetails.type === "img" && <div className={`message ${mid}`}><img src={msgDetails.message} width="250" height="250" alt="img"/></div>}
                         {msgDetails.type === "video" && <div className={`message ${mid}`}><video src={msgDetails.message}  width="320" height="240" controls/></div> }
                         {msgDetails.type === "audio" && <div className={`message ${mid}`}><audio src={msgDetails.message} controls/></div> }
 
