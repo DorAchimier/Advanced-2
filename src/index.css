@@ -569,12 +569,17 @@
 }
 
 .upload-popup-inner button {
-  
   background: #f1356d;
   color: #fff;
   border: 0;
-  top:5px;
+  top:0px;
+  left: 60px;
+  width: 58px;
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
+}
+
+.upload-popup-inner button:active {
+  background-color: #3577f1;
 }
