@@ -8,5 +8,5 @@
 
 ## check note
 The following user has the required chats:
--username:mj 
--password:MJ23
+  -username:mj 
+  -password:MJ23
