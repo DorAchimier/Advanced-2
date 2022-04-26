@@ -1,6 +1,6 @@
 # How to run it
 
-1. download the zip file
+1. download the zip file (Code -> Download Zip)
 2. unzip
 3. open "advanced-2-master" directory in the terminal
 4. type the command `npm install`
