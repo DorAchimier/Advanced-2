@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const Recorder = ({trigger, handleSend, handleChange, name, handleClose}) => {
+const Recorder = ({trigger, handleSend, handleChange, handleClose}) => {
       const [audioURL, setAudioURL] = useState("");
       const [isRecording, setIsRecording] = useState(false);
       const [recorder, setRecorder] = useState(null);
@@ -53,10 +53,11 @@ const Recorder = ({trigger, handleSend, handleChange, name, handleClose}) => {
         (<div className='upload-popup'>
             <div className='upload-popup-inner'>
                 
-                <button onClick={() => send(name)}>Send</button>
-                <button onClick={() => handleClose()}>X</button>
+                
                 <button onClick={() => startRecording()}>Start</button>
                 <button onClick={() => stopRecording()}>Stop</button>
+                <button onClick={() => send()}>Send</button>
+                <button onClick={() => handleClose()}>X</button>
                 
                 <br></br>
                 <br></br>
