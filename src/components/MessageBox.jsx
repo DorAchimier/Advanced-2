@@ -35,9 +35,9 @@ const MessageBox = ({ username , pressedContact , pUsername , getConversation, s
         sendFile(username, pUsername, t);
     }
 
-    const close3 = (t) => {
+    const close3 = (a) => {
         setButtonPopup3(!buttonPopup3);
-        sendAudio(username, pUsername);
+        sendAudio(username, pUsername, a);
     }
 
     const con = getConversation(username,pUsername);
@@ -56,12 +56,9 @@ const MessageBox = ({ username , pressedContact , pUsername , getConversation, s
         }
     }
 
-    const sendAudio = (u1, u2) => {
-        if (audio) {
-            sendMessage(u1, u2, audio, "audio");
-            sendHandler();
-            setAudio(null);
-        }
+    const sendAudio = (u1, u2, a) => {
+        sendMessage(u1, u2, a, "audio");
+        sendHandler();
     }
 
     const handleChangePhoto = (e) => {
@@ -72,7 +69,7 @@ const MessageBox = ({ username , pressedContact , pUsername , getConversation, s
         };
     } 
 
-    const [audio, setAudio] = useState(null);
+
 
     return ( 
         
@@ -94,7 +91,7 @@ const MessageBox = ({ username , pressedContact , pUsername , getConversation, s
 
                 <UploadPopUp trigger={buttonPopup2} handleSend={close2} handleChangePhoto={handleChangePhoto} name="video" handleClose={togglePopup2}/>
 
-                <Recorder trigger={buttonPopup3} handleSend={close3} handleChange={setAudio} name="audio" handleClose={togglePopup3}/>
+                <Recorder trigger={buttonPopup3} handleSend={close3} handleClose={togglePopup3}/>
             
             <div className="message-box-conversation">
                 {con.map(msgDetails => ( 
