@@ -104,10 +104,11 @@ const MessageBox = ({ username , pressedContact , pUsername , getConversation, s
                         {(msgDetails.sender === "ADMIN") ? mid = "admin" : mid}
                         </div>
                         {msgDetails.type === "text" && <div className={`message ${mid}`}>{msgDetails.message}</div>}
-                        
-                        {msgDetails.type === "img" && <div className={`message ${mid}`}><img src={msgDetails.message} width="100" height="100"/></div>}
+
+                        {msgDetails.type === "img" && <div className={`message ${mid}`}><img src={msgDetails.message} width="250" height="250"/></div>}
                         {msgDetails.type === "video" && <div className={`message ${mid}`}><video src={msgDetails.message}  width="320" height="240" controls/></div> }
-                        {console.log(msgDetails.message)}
+                        {msgDetails.type === "audio" && <div className={`message ${mid}`}><audio src={msgDetails.message} controls/></div> }
+
                         <div className={`message ${mid}-time`}>{msgDetails.time}</div>
                     </div>
                 ))}
